@@ -1,0 +1,68 @@
+@font-face {
+  font-family: 'iconfont';
+  /* project id 1303541 */
+  src: url('//at.alicdn.com/t/font_1303541_vyho9t1qnsk.eot');
+  src: url('//at.alicdn.com/t/font_1303541_vyho9t1qnsk.eot?#iefix') format('embedded-opentype'),
+    url('//at.alicdn.com/t/font_1303541_vyho9t1qnsk.woff2') format('woff2'),
+    url('//at.alicdn.com/t/font_1303541_vyho9t1qnsk.woff') format('woff'),
+    url('//at.alicdn.com/t/font_1303541_vyho9t1qnsk.ttf') format('truetype'),
+    url('//at.alicdn.com/t/font_1303541_vyho9t1qnsk.svg#iconfont') format('svg');
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* weixin */
+.iconweixin1:before {
+  content: "\e7b4";
+}
+
+.iconweibo:after {
+  content: '\e658';
+}
+
+.iconqq:before {
+  content: '\e64d'
+}
+
+/* 假一赔三 */
+.iconicon2:before {
+  content: '\e681';
+}
+
+.iconsf:before {
+  content: '\e8ce';
+}
+
+.iconlb:before {
+  content: '\e624';
+}
+
+.iconmd:before {
+  content: '\e639';
+}
+
+.iconsfh:before {
+  content: '\e6a2';
+}
+
+.iconzp:before {
+  content: '\e661';
+}
+
+.iconwx:before {
+  content: '\e64b';
+}
+
+.iconjm:before {
+  content: '\e60a';
+}
+
+.iconpx:before {
+  content: '\e764';
+}
