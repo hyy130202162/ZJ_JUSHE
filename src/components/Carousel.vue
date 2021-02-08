@@ -1,8 +1,8 @@
 <template>
   <div>
-    <el-carousel indicator-position="none" height="400px" :autoplay="false">
+    <el-carousel indicator-position="none" height="600px" :autoplay="false">
       <el-carousel-item v-for="(url, index) in pictureList" :key="index">
-        <el-image style="width: 30%" :src="url" :fit="fit" />
+        <el-image style="width: 100%; height: 100%" :src="url" :fit="fit" />
       </el-carousel-item>
     </el-carousel>
   </div>
@@ -32,7 +32,7 @@ export default {
   color: #475669;
   font-size: 18px;
   opacity: 0.75;
-  line-height: 300px;
+  line-height: 500px;
   margin: 0;
 }
 
