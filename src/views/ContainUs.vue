@@ -3,22 +3,39 @@
     <div class="videoBox">
       <Carousel />
     </div>
-    <div class="tabShow">
-      <el-tabs v-model="activeName" @tab-click="handleClick">
-        <el-tab-pane label="中检集团" name="first">
-          <div class="introduce">
-            <div class="En">CHINA CERTIFICATION&INSPECTION GROUP（CCIC）</div>
-            <div class="Zh">中检集团</div>
-            <div class="detailed">
-              中国检验认证集团（简称中检集团，英文缩写CCIC）是经国务院批准设立、国务院国资委管理的中央企业，是以“检验、鉴定、认证、测试”为主业的综合性质量服务机构，创建于1980年。
-              经过40年的发展，中检集团已经成为“中国第一，世界知名”的国际化检验检测认证企业集团。中检集团拥有CCIC和CQC两大品牌，设有检验公司、中国质量认证中心（CQC）、测试公司三大业务平台，国内机构网络完备，在30多个国家（地区）的主要口岸和货物集散地设有机构，近2万名员工和数百家实验室。
-              中检集团以“创造更值得信赖的世界”为使命，以“全球质量服务的引领者”为愿景，始终坚持“笃诚、守正、业精、鼎新”的核心价值观和“客户是中心、质量是生命”的经营理念，始终发扬“同心同力、创业创新、敢闯敢干、善作善成”的企业精神，立足中国，服务全球，努力将中检集团建设成为最具公信力的世界一流检验检测认证集团。
+    <div class="contactShow">
+      <div class="contactShowCon">
+        <div class="top">
+          <div class="En">CONTACT US</div>
+          <div class="fg"></div>
+          <div class="Zh">联系我们</div>
+        </div>
+
+        <div class="threeDiv">
+          <div class="left">
+            <div class="tit">中国检验认证集团（江苏）奢侈品鉴定中心</div>
+
+            <div class="addcontent">
+              <div class="qq">全国资讯电话：123-456-7890（24小时服务热线）</div>
+              <div class="qq">试听课预约：123-456-7890（活动期间免费）</div>
+              <div class="qq">地址：XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</div>
             </div>
           </div>
-        </el-tab-pane>
-        <el-tab-pane label="中检集团江苏分公司" name="second">中检集团江苏分公司</el-tab-pane>
-        <el-tab-pane label="培训鉴定中心" name="third">培训鉴定中心</el-tab-pane>
-      </el-tabs>
+          <div class="fg"></div>
+          <div class="center">
+            <div class="Email">邮箱</div>
+            <div class="qq">123456789@qq.com</div>
+          </div>
+          <div class="fg"></div>
+          <div class="right">
+            <div class="tit">关注官方微信</div>
+            <img src="../assets/wxqr.png" />
+          </div>
+        </div>
+      </div>
+      <div class="map_box">
+        <Maps />
+      </div>
     </div>
   </div>
 </template>
@@ -27,10 +44,12 @@
 <script>
 import { ref } from "vue";
 import Carousel from "../components/Carousel";
+import Maps from "@/components/maps.vue";
 export default {
   name: "ContainUs",
   components: {
-    Carousel
+    Carousel,
+    Maps
   },
   setup(props) {
     // <div class="introduce"></div>
@@ -50,15 +69,75 @@ export default {
 </script>
 
 <style lang="scss">
-.tabShow {
-  width: 70%;
-  margin: 0 auto;
-  // padding: 0 100px;
-  box-sizing: border-box;
-  // line-height: 60px;
-  .introduce {
-    // width: 80%;
-    // margin: 0 auto;
+.contactShow {
+  width: 100%;
+  .map_box {
+    margin-bottom: 40px;
+  }
+  .contactShowCon {
+    width: 70%;
+    margin: 0 auto;
+    .top {
+      margin: 50px auto;
+      .En {
+        font-size: 22px;
+        color: #8d8e8f;
+      }
+      .fg {
+        width: 80px;
+        height: 4px;
+        background-color: #003d81;
+      }
+      .Zh {
+        font-size: 22px;
+        color: #8d8e8f;
+      }
+    }
+
+    .threeDiv {
+      width: 100%;
+      margin: 40px 0;
+      display: flex;
+      justify-content: center;
+      .fg {
+        width: 1px;
+        height: 150px;
+        background-color: #8d8e8f;
+      }
+      .left,
+      .center,
+      .right {
+        width: 33%;
+        box-sizing: border-box;
+      }
+      .left {
+        padding-left: 15px;
+        .tit {
+          font-size: 18px;
+          margin: 25px 0;
+        }
+        .addcontent {
+          font-size: 14px;
+          line-height: 20px;
+        }
+      }
+      .center {
+        padding: 50px 0 0 80px;
+        .Email {
+          font-size: 14px;
+        }
+      }
+      .right {
+        padding: 0 0 0 80px;
+        .tit {
+          font-size: 14px;
+          line-height: 25px;
+        }
+        img {
+          width: 120px;
+        }
+      }
+    }
   }
 }
 </style>
