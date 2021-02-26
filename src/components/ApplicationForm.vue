@@ -52,6 +52,9 @@
 <script>
 import { ref, reactive, toRefs } from "vue";
 import { CHINA_REGION } from "@/utils/region";
+import { signUp } from "../api/form.js";
+import axios from "axios";
+import { ElMessage } from "element-plus";
 export default {
   name: "ApplicationForm",
   props: {},
@@ -91,7 +94,27 @@ export default {
       formRef.value.validate(valid => {
         if (valid) {
           console.log(valid, "-----", state.form);
-          // alert("submit!");
+
+          // signUp(state.form).then(response => {
+          //   console.log(response.data);
+          // });
+
+          axios({
+            method: "post",
+            url:
+              "http://ccic.cd63fb222a3be44a89df72686b34330f0.cn-hangzhou.alicontainer.com/train/apply",
+            data: state.form
+          })
+            .then(function(response) {
+              console.log(response);
+              if (response.data.retCode) {
+                ElMessage.success("报名信息提交成功");
+                formRef.value.resetFields();
+              }
+            })
+            .catch(function(error) {
+              console.log(error);
+            });
         } else {
           console.log("error submit!!");
           return false;

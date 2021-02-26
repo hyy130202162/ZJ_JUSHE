@@ -18,10 +18,55 @@
     </div>
     <div class="search">
       <div class="sea left">
-        <Certificate title="查询" />
+        <el-card class="box-card" shadow="never">
+          <template #header>
+            <div class="clearfix">
+              <span>查询</span>
+            </div>
+          </template>
+          <div class="left width-80 height inputBox">
+            <el-input placeholder="请输入证书编号" v-model="input4" class="input-with-select">
+              <template #prepend>
+                <el-select
+                  v-model="type"
+                  placeholder="请选择"
+                  style="width: 150px; margin-right: 10px"
+                >
+                  <el-option
+                    v-for="item in options"
+                    :key="item.value"
+                    :label="item.label"
+                    :value="item.value"
+                  ></el-option>
+                </el-select>
+              </template>
+              <template #append>
+                <el-button class="btn" @click="searchUp">查询</el-button>
+              </template>
+            </el-input>
+            <div class="tip">
+              <div>输入说明</div>
+              <div class="rule">1、培训查询输入证书右上角15位数字编码</div>
+              <div class="pic">
+                证书编码图片示例
+                <!-- <img src="" alt=""> -->
+              </div>
+            </div>
+          </div>
+        </el-card>
       </div>
       <div class="sea right">
-        <Certificate title="报名通道" />
+        <!-- <Certificate title="报名通道" /> -->
+        <el-card class="box-card margin-l10" shadow="never">
+          <template #header>
+            <div class="clearfix">
+              <span>报名通道</span>
+            </div>
+          </template>
+          <div class="right_box">
+            <ApplicationForm />
+          </div>
+        </el-card>
       </div>
     </div>
   </div>
@@ -33,12 +78,14 @@
 // src\components\Carousel.vue
 import Carousel from "@/components/Carousel.vue";
 import Certificate from "@/components/Certificate.vue";
+import ApplicationForm from "@/components/ApplicationForm.vue";
 export default {
   name: "Home",
   components: {
     // HelloWorld
     Carousel,
-    Certificate
+    Certificate,
+    ApplicationForm
   }
 };
 </script>
@@ -93,6 +140,35 @@ export default {
   }
   .right {
     margin-left: 10px;
+  }
+  .inputBox {
+    width: 100%;
+    padding: 80px;
+    box-sizing: border-box;
+    .input-with-select {
+      .el-input--suffix {
+        width: 150px;
+      }
+      .btn {
+        color: #fff;
+        background-color: #e77600;
+      }
+    }
+    .tip {
+      margin: 51px 0 0 0;
+      font-size: 9px;
+      color: #a1a1a1;
+      line-height: 20px;
+      .rule {
+        padding-left: 20px;
+      }
+      .pic {
+        width: 60%;
+        height: 80px;
+        background-color: #a1a1a1;
+        margin: 14px;
+      }
+    }
   }
 }
 </style>
