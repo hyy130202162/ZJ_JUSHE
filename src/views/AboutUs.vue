@@ -5,13 +5,13 @@
     </div>
     <div class="tabShow">
       <el-tabs v-model="activeName" @tab-click="handleClick">
-        <el-tab-pane label="中检集团" name="first">
+        <el-tab-pane label="中国检验认证集团" name="first">
           <div class="introduce">
             <div class="En">CHINA CERTIFICATION&INSPECTION GROUP（CCIC）</div>
             <div class="fg"></div>
-            <div class="Zh">中检集团</div>
+            <div class="Zh">中国检验认证集团</div>
             <div class="detailed">
-              <div class="detailedTitle">中国检验认证集团</div>
+              <!-- <div class="detailedTitle">中国检/验认证集团</div> -->
               <div class="detailedContent">
                 中国检验认证集团（简称中检集团，英文缩写CCIC）是经国务院批准设立、国务院国资委管理的中央企业，
                 是以“检验、鉴定、认证、测试”为主业的综合性质量服务机构，创建于1980年。
@@ -30,13 +30,13 @@
             </div>
           </div>
         </el-tab-pane>
-        <el-tab-pane label="中检集团江苏分公司" name="second">
+        <el-tab-pane label="中国检验认证集团江苏公司" name="second">
           <div class="introduce">
             <div class="En">CCIC JIANGSU</div>
             <div class="fg"></div>
-            <div class="Zh">中检集团江苏公司</div>
+            <div class="Zh">中国检验认证集团江苏公司</div>
             <div class="detailed">
-              <div class="detailedTitle">中国检验认证集团江苏公司</div>
+              <!-- <div class="detailedTitle">中国检验认证集团江苏公司</div> -->
               <div class="detailedContent">
                 作为中检集团九大核心公司之一，中国检验认证集团江苏有限公司是目前江苏地区以
                 “检验、鉴定、认证、测试、培训”为主业的综合性权威检验认证机构，设有20家分子公司，
@@ -53,13 +53,13 @@
             </div>
           </div>
         </el-tab-pane>
-        <el-tab-pane label="培训鉴定中心" name="third">
+        <el-tab-pane label="中国检验认证集团（江苏）奢侈品鉴定中心" name="third">
           <div class="introduce">
             <div class="En">CHINA CERTIFICATION&INSPETION GROUP（JIANGSU）LUXURY IDENTIFICATION CENTER</div>
             <div class="fg"></div>
             <div class="Zh">中国检验认证集团（江苏）奢侈品鉴定中心</div>
             <div class="detailed">
-              <div class="detailedTitle">中国检验认证集团</div>
+              <!-- <div class="detailedTitle">中国检验认证集团</div> -->
               <div class="detailedContent">
                 中国检验认证集团（江苏）奢侈品鉴定中心是由中检集团江苏公司设立的专门提供奢侈品鉴定和培训的“国”字头第三方奢侈品鉴定中心。
                 我们致力于独立买卖各方，为社会各界提供公正诚信的第三方奢侈品鉴定与培训服务，有效遏制售假，
@@ -76,7 +76,6 @@
     </div>
   </div>
 </template>
-
 
 <script>
 import { ref } from "vue";

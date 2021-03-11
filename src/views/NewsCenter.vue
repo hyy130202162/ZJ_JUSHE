@@ -7,19 +7,30 @@
       <div class="top">
         <div class="En">NEWS INFORMATION</div>
         <div class="fg"></div>
-        <div class="Zh">新闻动态</div>
+        <div class="Zh">新闻中心</div>
       </div>
       <div class="content_new">
-        <div class="left">
-          这里写新闻
-          
-
-
+        <div class="box" v-if="newsList && newsList.length > 0">
+          <div
+            v-for="(o, index) in newsList"
+            :key="index"
+            class="NewItem cursor-pointer"
+            @click="showNews(o)"
+          >
+            <div class="img">
+              <img :src="o.firstPicture" alt="four" />
+            </div>
+            <div class="txt">{{o.title}}</div>
+          </div>
         </div>
-        <div class="right"></div>
-       
+        <Pagination
+          ref="paginationRef"
+          :total="count"
+          @onPageChange="onPageChange"
+          :pageSize="9"
+          :pageNum="0"
+        />
       </div>
-      
     </div>
   </div>
 </template>
@@ -52,13 +63,10 @@ export default {
 
 <style lang="scss">
 .newShow {
-  width: 85%;
+  width: 70%;
   margin: 0 auto;
-  // padding: 0 100px;
   box-sizing: border-box;
-  // line-height: 60px;
   .top {
-  
     margin: 50px auto;
     .En {
       font-size: 22px;
@@ -68,6 +76,7 @@ export default {
       width: 80px;
       height: 4px;
       background-color: #003d81;
+      margin: 5px 0;
     }
     .Zh {
       font-size: 22px;
@@ -75,16 +84,30 @@ export default {
     }
   }
   .content_new {
-    display: flex;
-    justify-content: space-between;
-    .left {
-      width: 57%;
-      background-color: #555555;
+    margin-bottom: 40px;
+    .box {
+      display: flex;
+      flex-wrap: wrap;
+      // justify-content: space-around;
+      .NewItem {
+        width: 30%;
+        margin-bottom: 40px;
+        margin-right: 3.3%;
+        .img {
+          height: 280px;
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+        .txt {
+          margin-top: 10px;
+          color: #a1a1a1;
+          word-wrap: break-word;
+        }
+      }
     }
-    .right {
-      width: 35%;
-    }
-
   }
 }
 </style>
